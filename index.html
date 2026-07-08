@@ -1,49 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fashion Ecommerce</title>
 
-  <link rel="stylesheet" href="css/style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Store</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-  <nav class="navbar">
-    <div class="logo">Fashion Store</div>
+    <!-- ================= NAVBAR ================= -->
 
-    <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="cart.html">Cart</a></li>
-      <li><a href="wishlist.html">Wishlist</a></li>
-      <li><a href="orders.html">Orders</a></li>
-      <li><a href="login.html" id="loginLink">Login</a></li>
-      <li><button onclick="logout()" id="logoutBtn">Logout</button></li>
-    </ul>
+    <header>
 
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-  </nav>
+        <nav class="navbar">
 
-  <section class="hero">
-    <div>
-      <h1>Discover Your Style</h1>
-      <p>Trendy fashion collections for every season.</p>
-      <a href="products.html" class="btn">Shop Now</a>
-    </div>
-  </section>
+            <div class="logo">
+                Fashion Store
+            </div>
 
-  <section class="section">
-    <h2>Featured Products</h2>
-    <div class="product-grid" id="featuredProducts"></div>
-  </section>
+            <div class="search-box">
 
-  <footer>
-    <p>© 2026 Fashion Store. All rights reserved.</p>
-  </footer>
+                <input
+                    type="text"
+                    placeholder="Search for products..."
+                >
 
-  <script src="js/config.js"></script>
-  <script src="js/api.js"></script>
-  <script src="js/main.js"></script>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="products.html">Products</a></li>
+
+                <li><a href="wishlist.html">Wishlist</a></li>
+
+                <li>
+                    <a href="cart.html">
+
+                        Cart
+
+                        <span id="cartCount">
+
+                            0
+
+                        </span>
+
+                    </a>
+                </li>
+
+                <li><a href="orders.html">Orders</a></li>
+
+                <li>
+
+                    <a
+                        href="login.html"
+                        id="loginLink"
+                    >
+                        Login
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <button
+                        id="logoutBtn"
+                        onclick="logout()"
+                    >
+
+                        Logout
+
+                    </button>
+
+                </li>
+
+            </ul>
+
+            <button
+                class="menu-btn"
+                onclick="toggleMenu()"
+            >
+
+                ☰
+
+            </button>
+
+        </nav>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+
+                Discover Your Style
+
+            </h1>
+
+            <p>
+
+                Shop the latest fashion collection.
+
+            </p>
+
+            <a
+                href="products.html"
+                class="btn"
+            >
+
+                Shop Now
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="section">
+
+        <h2>
+
+            Shop By Category
+
+        </h2>
+
+        <div class="category-grid">
+
+            <div class="category-card">
+
+                👔
+
+                <h3>
+
+                    Men
+
+                </h3>
+
+            </div>
+
+            <div class="category-card">
+
+                👗
+
+                <h3>
+
+                    Women
+
+                </h3>
+
+            </div>
+
+            <div class="category-card">
+
+                🧒
+
+                <h3>
+
+                    Kids
+
+                </h3>
+
+            </div>
+
+            <div class="category-card">
+
+                👟
+
+                <h3>
+
+                    Shoes
+
+                </h3>
+
+            </div>
+
+            <div class="category-card">
+
+                👜
+
+                <h3>
+
+                    Accessories
+
+                </h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FEATURED PRODUCTS ================= -->
+
+    <section class="section">
+
+        <h2>
+
+            Featured Products
+
+        </h2>
+
+        <div
+            class="product-grid"
+            id="featuredProducts"
+        >
+
+        </div>
+
+    </section>
+
+    <!-- ================= WHY CHOOSE US ================= -->
+
+    <section class="section">
+
+        <h2>
+
+            Why Choose Us
+
+        </h2>
+
+        <div class="features">
+
+            <div class="feature-box">
+
+                🚚
+
+                <h3>
+
+                    Free Delivery
+
+                </h3>
+
+                <p>
+
+                    Fast delivery across India.
+
+                </p>
+
+            </div>
+
+            <div class="feature-box">
+
+                🔒
+
+                <h3>
+
+                    Secure Payment
+
+                </h3>
+
+                <p>
+
+                    100% secure payment gateway.
+
+                </p>
+
+            </div>
+
+            <div class="feature-box">
+
+                ↩️
+
+                <h3>
+
+                    Easy Returns
+
+                </h3>
+
+                <p>
+
+                    Hassle-free return policy.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= NEWSLETTER ================= -->
+
+    <section class="newsletter">
+
+        <h2>
+
+            Subscribe to our Newsletter
+
+        </h2>
+
+        <p>
+
+            Get updates on new arrivals and offers.
+
+        </p>
+
+        <input
+            type="email"
+            placeholder="Enter your email"
+        >
+
+        <button>
+
+            Subscribe
+
+        </button>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Fashion Store. All rights reserved.
+
+        </p>
+
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+
 </body>
+
 </html>
