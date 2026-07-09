@@ -1,12 +1,28 @@
-const API_BASE_URL = "https://fashion-ecommerce-2.onrender.com";
+const BASE_URL = "https://fashion-ecommerce-ozav.onrender.com";
+
 
 const API = {
-    LOGIN: `${API_BASE_URL}/api/accounts/login`,
-    REGISTER: `${API_BASE_URL}/api/accounts/register`,
-    PRODUCTS: `${API_BASE_URL}/api/products`,
-    CART: `${API_BASE_URL}/api/cart`,
-    WISHLIST: `${API_BASE_URL}/api/wishlist`,
-    PROFILE: `${API_BASE_URL}/api/accounts/profile`,
-    ORDERS: `${API_BASE_URL}/api/orders`,
-    BANNERS: `${API_BASE_URL}/api/banners/active`
+    LOGIN: `${BASE_URL}/api/accounts/login`,
+    REGISTER: `${BASE_URL}/api/accounts/register`,
+    PRODUCTS: `${BASE_URL}/api/products`,
+    CART: `${BASE_URL}/api/cart`,
+    WISHLIST: `${BASE_URL}/api/wishlist`,
+    PROFILE: `${BASE_URL}/api/accounts/profile`,
+    ORDERS: `${BASE_URL}/api/orders`,
+    BANNERS: `${BASE_URL}/api/banners/active`
 };
+
+
+function normalHeaders() {
+    return {
+        "Content-Type": "application/json"
+    };
+}
+
+
+function authHeaders() {
+    return {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + localStorage.getItem("access_token")
+    };
+}

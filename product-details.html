@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Product Details</title>
+
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="css/product-details.css">
+
+
+</head>
+
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<a class="logo" href="index.html">
+Fashion Store
+</a>
+
+
+</nav>
+
+</header>
+
+
+
+
+
+<section class="details-container">
+
+
+<div class="gallery">
+
+
+<img 
+id="mainImage">
+
+
+
+<div class="thumbs">
+
+<img src="">
+<img src="">
+<img src="">
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="details">
+
+
+<h1 id="productName">
+
+</h1>
+
+
+
+<p id="brand">
+
+</p>
+
+
+
+<div class="rating">
+
+⭐⭐⭐⭐⭐
+
+</div>
+
+
+<h2>
+
+₹<span id="offerPrice"></span>
+
+</h2>
+
+
+<p class="old-price">
+
+₹<span id="price"></span>
+
+</p>
+
+
+
+
+<h3>
+Select Size
+</h3>
+
+
+<div class="sizes">
+
+<button>
+S
+</button>
+
+<button>
+M
+</button>
+
+<button>
+L
+</button>
+
+<button>
+XL
+</button>
+
+
+</div>
+
+
+
+<h3>
+Select Color
+</h3>
+
+
+<div class="colors">
+
+
+<button class="black"></button>
+
+<button class="white"></button>
+
+<button class="blue"></button>
+
+
+</div>
+
+
+
+<button onclick="changeQuantity('minus')">
+-
+</button>
+
+<span id="quantity">
+1
+</span>
+
+<button onclick="changeQuantity('plus')">
++
+</button>
+
+
+
+<button 
+class="cart-btn"
+onclick="addToCart()">
+Add To Cart
+</button>
+
+
+<button 
+class="buy-btn"
+onclick="buyNow()">
+Buy Now
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="description-box">
+
+
+<h2>
+Product Description
+</h2>
+
+
+<p id="description">
+
+</p>
+
+
+</section>
+
+
+
+
+<script src="js/config.js"></script>
+
+<script src="js/api.js"></script>
+
+<script src="js/product-details.js"></script>
+
+
+</body>
+
+
+</html>

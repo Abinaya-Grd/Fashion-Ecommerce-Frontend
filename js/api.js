@@ -1,24 +1,21 @@
-const API_BASE_URL = "https://fashion-ecommerce-2.onrender.com";
+// api.js
 
-const API = {
-    LOGIN: `${API_BASE_URL}/api/accounts/login`,
-    REGISTER: `${API_BASE_URL}/api/accounts/register`,
-    PRODUCTS: `${API_BASE_URL}/api/products`,
-    CART: `${API_BASE_URL}/api/cart`,
-    WISHLIST: `${API_BASE_URL}/api/wishlist`,
-    PROFILE: `${API_BASE_URL}/api/accounts/profile`,
-    ORDERS: `${API_BASE_URL}/api/orders`,
-    BANNERS: `${API_BASE_URL}/api/banners/active`
-};
-function normalHeaders() {
-    return {
-        "Content-Type": "application/json"
-    };
-}
+async function apiRequest(url, options = {}) {
 
-function authHeaders() {
-    return {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer " + localStorage.getItem("access_token")
-    };
+    try {
+
+        const response = await fetch(url, options);
+
+        return await response.json();
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        return null;
+
+    }
+
 }

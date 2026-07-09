@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fashion Store - Products</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="css/products.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<a href="index.html" class="logo">
+Fashion Store
+</a>
+
+
+<div class="search-box">
+
+<input 
+type="text"
+id="searchInput"
+placeholder="Search fashion products..."
+>
+
+
+<button>
+<i class="fa fa-search"></i>
+</button>
+
+
+</div>
+
+
+<ul class="nav-links">
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+
+<li>
+<a href="products.html">
+Products
+</a>
+</li>
+
+
+<li>
+<a href="cart.html">
+Cart
+</a>
+</li>
+
+
+<li>
+<a href="login.html">
+Login
+</a>
+</li>
+
+</ul>
+
+
+</nav>
+
+</header>
+
+
+
+
+<section class="shop-container">
+
+
+<aside class="filter-box">
+
+
+<h3>
+Filters
+</h3>
+
+
+<h4>
+Category
+</h4>
+
+
+<label>
+<input type="checkbox">
+Men
+</label>
+
+
+<label>
+<input type="checkbox">
+Women
+</label>
+
+
+<label>
+<input type="checkbox">
+Kids
+</label>
+
+
+
+<h4>
+Price
+</h4>
+
+
+<select id="sortSelect">
+
+<option>
+Sort By
+</option>
+
+
+<option value="low">
+Price Low to High
+</option>
+
+
+<option value="high">
+Price High to Low
+</option>
+
+
+</select>
+
+
+</aside>
+
+
+
+
+
+<main class="products-area">
+
+
+<h1>
+Latest Fashion Collection
+</h1>
+
+
+
+<div 
+class="product-grid"
+id="productContainer"
+>
+
+</div>
+
+
+
+</main>
+
+
+</section>
+
+
+
+
+
+<script src="js/config.js"></script>
+
+<script src="js/api.js"></script>
+
+<script src="js/products.js"></script>
+
+
+</body>
+
+</html>
