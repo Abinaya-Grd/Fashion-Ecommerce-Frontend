@@ -1,0 +1,13 @@
+:root {
+    --primary: #ff1744;
+    --secondary: #222222;
+    --white: #ffffff;
+    --light: #f8f9fa;
+    --border: #e5e5e5;
+    --text: #555555;
+    --success: #28a745;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --radius: 12px;
+    --transition: .3s;
+}

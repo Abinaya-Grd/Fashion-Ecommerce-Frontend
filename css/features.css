@@ -1,0 +1,37 @@
+.features-section {
+    padding: 70px 0;
+    background: #f8f9fa;
+}
+
+.feature-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 30px 20px;
+    text-align: center;
+    height: 100%;
+    transition: .35s;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .12);
+}
+
+.feature-card i {
+    font-size: 42px;
+    color: #ff3f6c;
+    margin-bottom: 18px;
+}
+
+.feature-card h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    color: #777;
+    font-size: 14px;
+    margin: 0;
+}
