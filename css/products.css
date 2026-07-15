@@ -2,7 +2,8 @@
 
 .products-section {
     padding: 80px 0;
-    background: #f8f9fa;
+    /* background: #f8f9fa; */
+    background-color: #f8f9fa;
 }
 
 
@@ -177,6 +178,11 @@
     font-size: 30px;
     font-weight: bold;
 }
+
+
+/* .section-title {
+    margin-bottom: 40px;
+} */
 
 
 /* Responsive */

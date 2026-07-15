@@ -2,8 +2,8 @@ async function loadHeroBanners() {
 
     try {
 
-        const response = await fetch(API.BANNERS);
-
+        // const response = await fetch(API.BANNERS);
+        const response = await fetch(`${API.BANNERS}/active?banner_type=hero`);
         const result = await response.json();
 
         const container = document.getElementById("bannerContainer");

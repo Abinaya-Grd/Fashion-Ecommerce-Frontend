@@ -87,6 +87,16 @@
     .hero-buttons {
         flex-direction: column;
     }
+    .hero-slide::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, .35);
+    }
+    .hero-content {
+        position: absolute;
+        z-index: 2;
+    }
     .shop-btn,
     .explore-btn {
         text-align: center;

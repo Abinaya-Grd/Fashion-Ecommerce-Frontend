@@ -18,7 +18,9 @@ const API = {
 
     BANNERS: `${BASE_URL}/api/banners`,
 
-    CATEGORIES: `${BASE_URL}/api/categories`
+    CATEGORIES: `${BASE_URL}/api/categories`,
+    BRANDS: `${BASE_URL}/api/brands`
+
 
 };
 
