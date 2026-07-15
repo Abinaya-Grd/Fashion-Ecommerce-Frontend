@@ -1,161 +1,183 @@
-let products = [];
-
-document.addEventListener("DOMContentLoaded", () => {
-  loadProducts();
-
-  document
-    .getElementById("searchInput")
-    ?.addEventListener("input", searchProducts);
-
-  document
-    .getElementById("sortSelect")
-    ?.addEventListener("change", sortProducts);
-});
-
 async function loadProducts() {
-  const container = document.getElementById("productContainer");
 
-  container.innerHTML = "<h2>Loading Products...</h2>";
+    try {
 
-  try {
-    const response = await fetch(API.PRODUCTS);
+        const response = await fetch(API.PRODUCTS);
 
-    const result = await response.json();
-    console.log(result.data);
+        const result = await response.json();
 
-    products = result.data;
+        const products = result.data;
 
-    displayProducts(products);
-  } catch (error) {
-    console.log(error);
+        const container = document.getElementById("productContainer");
 
-    container.innerHTML = "<h2>Unable to load products</h2>";
-  }
-}
+        container.innerHTML = "";
 
-function displayProducts(data) {
-  const container = document.getElementById("productContainer");
+        products.forEach(product => {
 
-  container.innerHTML = "";
+                    let discount = 0;
 
-  data.forEach((product) => {
-    let discount = 0;
+                    if (product.offer_price) {
 
-    if (product.price > product.offer_price) {
-      discount = Math.round(
-        ((product.price - product.offer_price) / product.price) * 100,
-      );
-    }
+                        discount = Math.round(
+                            ((product.price - product.offer_price) / product.price) * 100
+                        );
 
-    container.innerHTML += `
+                    }
 
+                    container.innerHTML += `
 
-        <div class="product-card">
+            <div class="swiper-slide">
 
+                <div class="product-card">
 
+                    <div class="product-image">
 
-            <img 
-            src="${product.thumbnail}"
-            alt="${product.name}"
-            >
+                        <img src="${product.thumbnail}" alt="${product.name}">
 
+                        ${
+                            discount > 0
+                            ?
+                            `<div class="offer-badge">${discount}% OFF</div>`
+                            :
+                            ""
+                        }
 
+                        <div class="product-actions">
 
-            <div class="product-info">
+                            <button>
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
 
+                            <button>
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
 
+                        </div>
 
-                <h3 class="product-title">
+                    </div>
 
-                ${product.name}
+                    <div class="product-info">
 
-                </h3>
+                        <div class="product-brand">
+                            ${product.brand_details.name}
+                        </div>
 
+                        <h4 class="product-name">
+                            ${product.name}
+                        </h4>
 
+                        <div class="product-category">
+                            ${product.category_details.name}
+                        </div>
 
-                <p>
+                        <div class="rating">
+                            ★★★★★
+                        </div>
 
-                ${product.brand_details.name}
+                        <div class="price">
 
-                </p>
+                            <span class="offer-price">
+                                ₹${product.offer_price ?? product.price}
+                            </span>
 
+                            ${
+                                product.offer_price
+                                ?
+                                `
+                                <span class="original-price">
+                                    ₹${product.price}
+                                </span>
 
+                                <span class="discount">
+                                    ${discount}% OFF
+                                </span>
+                                `
+                                :
+                                ""
+                            }
 
+                        </div>
 
-                <p class="price">
+                        <button class="cart-btn">
 
-                ₹${product.offer_price}
+                            <i class="fa-solid fa-cart-shopping"></i>
 
-                <span class="old-price">
+                            Add To Cart
 
-                ₹${product.price}
+                        </button>
 
-                </span>
+                    </div>
 
-                </p>
-
-
-
-
-                <p class="discount">
-
-                ${discount}% OFF
-
-                </p>
-
-
-
-
-
-                <button 
-                onclick="
-                viewProduct(${product.productid})
-                "
-                >
-
-                View Product
-
-                </button>
-
-
-
+                </div>
 
             </div>
 
+            `;
 
-        </div>
+        });
 
+        new Swiper(".productSwiper", {
 
-        `;
-  });
+            slidesPerView: 4,
+
+            spaceBetween: 25,
+
+            loop: true,
+
+            autoplay: {
+
+                delay: 3000,
+
+                disableOnInteraction: false
+
+            },
+
+            navigation: {
+
+                nextEl: ".product-next",
+
+                prevEl: ".product-prev"
+
+            },
+
+            breakpoints: {
+
+                0: {
+
+                    slidesPerView: 1
+
+                },
+
+                576: {
+
+                    slidesPerView: 2
+
+                },
+
+                768: {
+
+                    slidesPerView: 3
+
+                },
+
+                1200: {
+
+                    slidesPerView: 4
+
+                }
+
+            }
+
+        });
+
+    }
+
+    catch (error) {
+
+        console.log(error);
+
+    }
+
 }
 
-function searchProducts(e) {
-  const value = e.target.value.toLowerCase();
-
-  const filtered = products.filter((product) =>
-    product.name.toLowerCase().includes(value),
-  );
-
-  displayProducts(filtered);
-}
-
-function sortProducts(e) {
-  let value = e.target.value;
-
-  let sorted = [...products];
-
-  if (value === "low") {
-    sorted.sort((a, b) => a.offer_price - b.offer_price);
-  }
-
-  if (value === "high") {
-    sorted.sort((a, b) => b.offer_price - a.offer_price);
-  }
-
-  displayProducts(sorted);
-}
-
-function viewProduct(id) {
-  window.location.href = `product-details.html?id=${id}`;
-}
+loadProducts();
