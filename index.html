@@ -32,8 +32,7 @@
     <link rel="stylesheet" href="css/products.css">
     <link rel="stylesheet" href="css/festival.css">
     <link rel="stylesheet" href="css/brands.css">
-
-
+    <link rel="stylesheet" href="css/footer.css">
 
 </head>
 
@@ -63,7 +62,6 @@
 
                             <img src=".//assets/logo/logo.png" alt="logo" style="width: 80px;
     height: 80px;"></h2>
-
                     </div>
 
                     <!-- Search -->
@@ -90,7 +88,7 @@
 
                         <div class="header-icons ">
 
-                            <a href="# ">
+                            <a href="pages/login.html">
 
                                 <i class="fa-regular fa-user "></i>
 
@@ -98,7 +96,7 @@
 
                             </a>
 
-                            <a href="# ">
+                            <a href="pages/wishlist.html">
 
                                 <i class="fa-regular fa-heart "></i>
 
@@ -106,7 +104,7 @@
 
                             </a>
 
-                            <a href="# ">
+                            <a href="pages/cart.html">
 
                                 <i class="fa-solid fa-cart-shopping "></i>
 
@@ -143,43 +141,47 @@
 
                         <li class="nav-item ">
 
-                            <a class="nav-link active " href="# ">Home</a>
+                            <a class="nav-link active " href="index.html">Home</a>
 
                         </li>
 
                         <li class="nav-item ">
 
-                            <a class="nav-link " href="# ">Men</a>
+                            <a class="nav-link" href="pages/category.html?category=men">Men</a>
 
                         </li>
 
                         <li class="nav-item ">
 
-                            <a class="nav-link " href="# ">Women</a>
+
+                            <a class="nav-link" href="pages/category.html?category=women">Women</a>
 
                         </li>
 
                         <li class="nav-item ">
 
-                            <a class="nav-link " href="# ">Kids</a>
+                            <a class="nav-link" href="pages/category.html?category=kids">Kids</a>
+
+
 
                         </li>
 
                         <li class="nav-item ">
 
-                            <a class="nav-link " href="# ">New Arrivals</a>
+                            <a class="nav-link" href="pages/category.html?filter=new">New Arrivals</a>
+
 
                         </li>
 
                         <li class="nav-item ">
 
-                            <a class="nav-link " href="# ">Offers</a>
+                            <a class="nav-link " href="pages/shop.html?offer=true">Offers</a>
 
                         </li>
 
                         <li class="nav-item ">
 
-                            <a class="nav-link " href="# ">Brands</a>
+                            <a class="nav-link " href="#brands-section">Brands</a>
 
                         </li>
 
@@ -191,11 +193,12 @@
 
                         <li class="nav-item ">
 
-                            <a class="nav-link " href="# ">Contact</a>
+                            <a class="nav-link " href="pages/contact.html">Contact</a>
 
                         </li>
 
                     </ul>
+
 
                 </div>
 
@@ -411,28 +414,21 @@
         </div>
 
     </section>
+    <div id="footer"></div>
 
-    <!============ DUMMY BODY ===================>
+    <script>
+        fetch("./components/footer.html")
+            .then(res => res.text())
+            .then(data => {
 
-    <section class="dummy ">
+                document.getElementById("footer").innerHTML = data;
 
-        <div class="container text-center ">
+                initFooter();
 
-            <h1>
+            });
+    </script>
 
-                Welcome to Azyra
 
-            </h1>
-
-            <p>
-
-                Professional Fashion Store UI
-
-            </p>
-
-        </div>
-
-    </section>
 
     <!--================ WHATSAPP =================-->
 
@@ -458,9 +454,7 @@
     <script src="js/products.js"></script>
     <script src="js/festival.js"></script>
     <script src="js/brands.js"></script>
-
-
-
+    <script src="js/footer.js"></script>
 
 
 </body>

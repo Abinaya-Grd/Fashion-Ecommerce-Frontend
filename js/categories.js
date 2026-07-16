@@ -29,7 +29,7 @@ async function loadCategories() {
 
                             <h4>${category.name}</h4>
 
-                            <a href="pages/products.html?category=${category.id}" class="shop-btn">
+                            <a href="pages/category.html?category=${category.id}" class="shop-btn">
 
                                 Shop Now
 
@@ -45,9 +45,7 @@ async function loadCategories() {
 
         });
 
-    }
-
-    catch(error){
+    } catch (error) {
 
         console.error("Category Error:", error);
 
